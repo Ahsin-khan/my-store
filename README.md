@@ -1,27 +1,70 @@
 # MyStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+## Overview
+This is a simple e-commerce cart application built with Angular. It allows users to browse products, add them to a shopping cart, adjust quantities, and remove items from the cart. Users can also fill in their details and proceed to order confirmation.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Product listing
+* Add products to the cart
+* Adjust product quantities in the cart
+* Remove products from the cart
+* Display total price in the cart
+* User details form for order confirmation
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+* Angular
+* TypeScript
+* HTML
+* CSS
+
+# Getting Started
+
+## Prerequisites
+
+* Node.js
+* Angular CLI
+
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+*	Clone the repository:
+    git clone https://github.com/Ahsin-khan/my-store.git
+    cd my-store
 
-## Running end-to-end tests
+* Install the dependencies:
+    npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Start the application:
+    ng serve --port 3000   
+    The application will be available at http://localhost:3000.
 
-## Further help
+# Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Adding Products to the Cart
+
+* Navigate to the product listing page.
+* Select the quantity and click "Add to Cart".
+* The item will be added to the cart.
+
+## Viewing and Modifying the Cart
+* Click on the cart link to view the items in the cart.
+* You can adjust the quantity using the dropdown for each item.
+* To remove an item, click the "Remove" button next to the product.
+
+## Proceeding to Checkout
+* Fill in the user details form with your name, address, and credit card number.
+* Click "Submit" to place the order.
+
+## Contributing
+If you would like to contribute, please fork the repository and use a feature branch. Pull requests are welcome.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For any questions or feedback, please reach out to 'ahsinkhalid44@gmail.com.
