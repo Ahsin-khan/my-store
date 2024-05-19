@@ -1,0 +1,62 @@
+  <div class="cart-container" style="font-family: 'Roboto', sans-serif;">
+    <div class="cart-panel">
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <ul>
+          <li *ngFor="let item of cartItems" class="cart-item">
+            <img [src]="item.url" [alt]="item.name" class="product-image">
+            <div class="cart-item-details">
+              <h3>{{ item.name }}</h3>
+              <p>Price: ${{ item.price }}</p>
+              <div class="quantity-select-container">
+                <select id="quantity-select-{{ item.id }}" class="quantity-select" [(ngModel)]="item.quantity">
+                  <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+                </select>
+              </div>
+            </div>
+          </li>
+        </ul>
+  
+        <!-- Display total price -->
+        <div *ngIf="cartItems.length > 0" class="total-price">
+          <h4>Total: ${{ totalPrice }}</h4>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <p class="empty-cart-message">Your cart is empty.</p>
+      </ng-template>
+    </div>
+
+
+    <div class="cart-panel">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group form-margin">
+          <label for="name">Full name</label><br>
+          <input type="text" id="name" [(ngModel)]="userName" name="name" required minlength="3" pattern="[a-zA-Z ]*" placeholder="(minimum 3 characters)" #name="ngModel">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+            <div *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</div>
+            <div *ngIf="name.errors?.['pattern']">Name can only contain alphabets.</div>
+          </div>        
+        </div>
+        <div class="form-group form-margin">
+          <label for="address">Address</label><br>
+          <input type="text" required minlength="6" id="address" [(ngModel)]="userAddress" name="address" placeholder="(minimum 6 characters)"  #address="ngModel">
+          <div *ngIf="address.invalid && (address.dirty || address.touched)" class="error-message">
+            <div *ngIf="address.errors?.['required']">Address is required.</div>
+            <div *ngIf="address.errors?.['minlength']">Address must be at least 6 characters long.</div>
+          </div>
+        </div>
+        <div class="form-group form-margin">
+          <label for="creditCard">Credit card number</label><br>
+          <input type="text" id="creditCard" [(ngModel)]="userCreditCard" name="creditCard" required minlength="16" pattern="\d*" placeholder="(16-digit number)" #creditCard="ngModel">
+          <div *ngIf="creditCard.invalid && (creditCard.dirty || creditCard.touched)" class="error-message">
+            <div *ngIf="creditCard.errors?.['required']">Credit Card Number is required.</div>
+            <div *ngIf="creditCard.errors?.['minlength']">Credit Card Number must be 16 digits long.</div>
+            <div *ngIf="creditCard.errors?.['pattern']">Credit Card Number can only contain numbers.</div>
+          </div>        
+        </div>
+          <button [disabled]="form.invalid" type="submit" class="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  

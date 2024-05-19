@@ -1,0 +1,79 @@
+img {
+    border-radius: 10px;
+    width: 320px;
+  }
+  
+  .select-input {
+    width: 108px; 
+    margin-bottom: 8px;
+  }
+  
+  .detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+  }
+  
+  .detail-item {
+    margin-left: 128px;
+    margin-right: 128px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  
+  .back-link {
+    margin-top: 15px;
+    color: #33B5E5;
+    text-decoration: none;
+  }
+  
+  .small-font {
+    font-size: 14px;
+  }
+  
+  .back-link-container {
+    margin-top: 20px;
+  }
+
+  .add-to-cart-button {
+    margin-top: 5px;
+    background-color: #33B5E5;
+    color: #fff;
+    border: none;
+    padding: 10px 10px; /* Adjust padding as needed */
+    font-size: 15px; /* Adjust font size */
+    cursor: pointer;
+    border-radius: 4px; /* Add border radius for rounded corners */
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #1c7aa8; /* Darker shade on hover */
+  }
+
+  /* CSS */
+.quantity-select-container {
+  margin-top: 10px; /* Adjust spacing */
+}
+
+.quantity-select {
+  width: 65%;
+  padding: 5px;
+  font-size: 14px;
+  border: 2px solid #33B5E5; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff;
+  color: #333;
+  height: 30px; /* Adjust the height */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.quantity-select:focus {
+  border-color: #007BFF; /* Change border color when focused */
+}
+
+.quantity-select option {
+  padding: 10px;
+}
+  

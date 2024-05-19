@@ -1,0 +1,112 @@
+img {
+    width: 100px;
+    border-radius: 10px;
+  }
+  
+  .form-margin {
+    margin-bottom: 12px;
+  }
+  
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 80px;
+  }
+  
+  .number-input {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .cart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  
+  .cart-panel {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .empty-cart-message {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+  } 
+
+
+  .submit {
+    margin-top: 5px;
+    background-color: #33B5E5;
+    color: #fff;
+    border: none;
+    padding: 10px 10px; /* Adjust padding as needed */
+    font-size: 15px; /* Adjust font size */
+    cursor: pointer;
+    border-radius: 4px; /* Add border radius for rounded corners */
+  }
+  
+  .submit:hover {
+    background-color: #1c7aa8; /* Darker shade on hover */
+  }
+
+  button:disabled {
+    background-color: #cccccc;  /* Grey color for disabled button */
+    cursor: not-allowed;  /* Change cursor to not-allowed */
+}
+
+  input[type="text"], select {
+    width: 150%;
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #33B5E5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+
+/* Error message styling */
+.error-message {
+  font-size: 12px; /* Small font size */
+  color: red; /* Red color */
+} 
+
+.total-price {
+  margin-top: 20px;
+  font-size: 20px; /* Larger font size */
+  text-align: center;
+}
+
+
+.quantity-select {
+  width: 80%;
+  padding: 5px;
+  font-size: 14px;
+  border: 2px solid #33B5E5; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff;
+  color: #333;
+  height: 30px; /* Adjust the height */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.quantity-select:focus {
+  border-color: #007BFF; /* Change border color when focused */
+}
+
+.quantity-select option {
+  padding: 10px;
+}

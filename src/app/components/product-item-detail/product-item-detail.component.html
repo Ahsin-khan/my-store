@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<form (ngSubmit)="onSubmit()">
+  <div class="detail-container">
+    <div class="detail-item">
+      <img class="img" [src]="product.url" alt="{{ product.name }}">
+    </div>
+    <div class="detail-item">
+      <h2>{{ product.name }}</h2>
+      <p>${{ product.price }}</p>
+      <p>{{ product.description }}</p>
+  
+      <div class="quantity-select-container">
+        <select id="quantity-select" class="quantity-select" [(ngModel)]="selectedQuantity" name="quantity">
+          <option *ngFor="let qty of [1,2,3,4,5,6,7,8,9,10]" [value]="qty">{{ qty }}</option>
+        </select>
+      </div>
+      <button class="add-to-cart-button">Add to Cart</button><br><br>
+      <a routerLink="/" class="back-link small-font"><i class="fas fa-arrow-left"></i> Back to product list</a>    
+    </div>
+</div>
+</form>  
+  

@@ -1,0 +1,33 @@
+.header {
+    text-align: center;
+    background: #33B5E5;
+    color: #fff;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+
+  .header a {
+    color: inherit; /* Inherit color from the parent element */
+    text-decoration: none; /* Remove the default underline */
+  }
+  
+  .header a:hover {
+    text-decoration: underline; /* Add underline when the link is hovered */
+  }
+  
+  .a {
+    color: #ffffff;
+  }
+
+  .container {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Align items vertically centered */
+    justify-content: center; /* Align items horizontally centered */
+
+  }
+
+.container a,
+.container span {
+  margin: 0 5px; /* Add margin to create space between elements */
+}
