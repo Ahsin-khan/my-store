@@ -12,6 +12,7 @@
                   <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
                 </select>
               </div>
+              <button class="remove-button" (click)="removeItem(item.id)">Remove</button>
             </div>
           </li>
         </ul>

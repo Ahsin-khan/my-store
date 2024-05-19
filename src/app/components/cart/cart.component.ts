@@ -55,4 +55,9 @@ export class CartComponent implements OnInit {
 
     this.router.navigate(['/confirmation']);
   }
+
+
+  removeItem(productId: number) {
+    this.cartService.removeFromCart(productId);
+  }
 }

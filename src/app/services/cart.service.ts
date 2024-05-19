@@ -24,4 +24,10 @@ export class CartService {
   getCartItems() {
     return this.cartItemsSubject.asObservable();
   }
+
+
+  removeFromCart(productId: number) {
+    this.cartItems = this.cartItems.filter(item => item.id !== productId);
+    this.cartItemsSubject.next(this.cartItems);
+  }
 } 
