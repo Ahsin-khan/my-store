@@ -8,9 +8,11 @@
               <h3>{{ item.name }}</h3>
               <p>Price: ${{ item.price }}</p>
               <div class="quantity-select-container">
-                <select id="quantity-select-{{ item.id }}" class="quantity-select" [(ngModel)]="item.quantity">
+                <select id="quantity-select-{{ item.id }}" class="quantity-select"
+                [(ngModel)]="item.quantity" (ngModelChange)="onQuantityChange(item.id, $event)">
                   <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
-                </select>
+                 </select>
+
               </div>
               <button class="remove-button" (click)="removeItem(item.id)">Remove</button>
             </div>

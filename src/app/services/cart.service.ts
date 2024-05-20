@@ -26,8 +26,20 @@ export class CartService {
   }
 
 
+  updateCart(cartItems: ProductsInCart[]) {
+    this.cartItems = cartItems;
+    this.cartItemsSubject.next(this.cartItems);
+  }
+
+
   removeFromCart(productId: number) {
     this.cartItems = this.cartItems.filter(item => item.id !== productId);
+    this.cartItemsSubject.next(this.cartItems);
+  }
+
+
+  clearCart() {
+    this.cartItems = [];
     this.cartItemsSubject.next(this.cartItems);
   }
 } 

@@ -23,27 +23,39 @@ export class CartComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private confirmationService: ConfirmationService,
-    private router: Router  // <-- Add Router here
+    private router: Router
 
   ) { }
 
   ngOnInit(): void {
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
+      this.calculateTotalPrice();
+
     });
-
-    this.calculateTotalPrice()
-  }
-
-  ngDoCheck(): void {
-    this.calculateTotalPrice();
   }
  
+
   calculateTotalPrice(): void {
     const totalPriceWithDecimals = this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     this.totalPrice = Number(totalPriceWithDecimals.toFixed(2)); // Round to two decimal places
   }
-  
+
+
+  onQuantityChange(productId: number, newQuantity: number): void {
+    const product = this.cartItems.find(item => item.id === productId);
+    if (product) {
+      product.quantity = newQuantity;
+      this.cartService.updateCart(this.cartItems); 
+      this.calculateTotalPrice();
+    }
+  }
+
+
+  removeItem(productId: number) {
+    this.cartService.removeFromCart(productId);
+  }
+
 
   onSubmit() {
     const userInfo = {
@@ -54,10 +66,5 @@ export class CartComponent implements OnInit {
     this.confirmationService.confirmation(userInfo);
 
     this.router.navigate(['/confirmation']);
-  }
-
-
-  removeItem(productId: number) {
-    this.cartService.removeFromCart(productId);
   }
 }
